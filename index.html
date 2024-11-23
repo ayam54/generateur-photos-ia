@@ -73,11 +73,12 @@
             formData.append("description", document.getElementById('description').value);
 
             try {
+                // Remplace l'URL ci-dessous par celle de ton serveur Replit
                 const response = await fetch('https://fb689101-dd5d-4d1e-8e6d-8861b65f617c-00-228uligx0afnc.spock.replit.dev/upload', {
-
                     method: 'POST',
                     body: formData
                 });
+
                 const data = await response.json();
                 if (data.image_url) {
                     document.getElementById('resultImage').src = data.image_url;
